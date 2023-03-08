@@ -35,10 +35,10 @@ class TrendingMovies extends StatelessWidget {
                           builder: (context) => Description(
                             name: trending[index]['title'],
                             description: trending[index]['overview'],
-                            // bannerurl: 'http://image.tmdb.org/t/p/w500' +
-                            //     trending[index]['backdrop-path'],
-                            // posterurl: 'http://image.tmdb.org/t/p/w500' +
-                            //     trending[index]['poster_path'],
+                            bannerurl:
+                                'http://image.tmdb.org/t/p/w500${trending[index]['backdrop-path']}',
+                            posterurl:
+                                'http://image.tmdb.org/t/p/w500${trending[index]['poster_path']}',
                             vote: trending[index]['vote_average'].toString(),
                             launch_on: trending[index]['release_date'],
                           ),

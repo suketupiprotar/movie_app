@@ -6,8 +6,8 @@ class Description extends StatelessWidget {
 
   final String name;
   final String description;
-  // final dynamic bannerurl;
-  // final dynamic posterurl;
+  final String bannerurl;
+  final String posterurl;
   final String vote;
   final String launch_on;
 
@@ -15,14 +15,16 @@ class Description extends StatelessWidget {
     super.key,
     required this.name,
     required this.description,
-    // required this.bannerurl,
-    // required this.posterurl,
+    required this.bannerurl,
+    required this.posterurl,
     required this.vote,
     required this.launch_on,
   });
 
   @override
   Widget build(BuildContext context) {
+    // print(bannerurl);
+    // print(posterurl);
     return Scaffold(
       backgroundColor: Colors.black,
       body: Container(
@@ -36,10 +38,14 @@ class Description extends StatelessWidget {
                     child: Container(
                       height: 250,
                       width: MediaQuery.of(context).size.width,
-                      // child: Image.network(
-                      //   bannerurl,
-                      //   fit: BoxFit.cover,
-                      // ),
+                      child: bannerurl != null
+                          ? Image.network(
+                              bannerurl,
+                              fit: BoxFit.cover,
+                            )
+                          : modified_text(
+                              text: "Banner Link is invalid.",
+                            ),
                     ),
                   ),
                   Positioned(
@@ -79,13 +85,20 @@ class Description extends StatelessWidget {
                   ),
                   height: 200,
                   width: 100,
-                  // child: Image.network(
-                  //   posterurl,
-                  // ),
+                  child: posterurl != null
+                      ? Image.network(
+                          posterurl,
+                        )
+                      : modified_text(
+                          text: "Poster Link is Invalid",
+                        ),
                 ),
                 Flexible(
                   child: Container(
-                    child: modified_text(text: description,size: 18,),
+                    child: modified_text(
+                      text: description,
+                      size: 18,
+                    ),
                   ),
                 )
               ],

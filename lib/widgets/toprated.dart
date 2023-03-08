@@ -35,10 +35,10 @@ class TopRated extends StatelessWidget {
                           builder: (context) => Description(
                             name: toprated[index]['title'],
                             description: toprated[index]['overview'],
-                            // bannerurl: 'http://image.tmdb.org/t/p/w500' +
-                            //     toprated[index]['backdrop-path'],
-                            // posterurl: 'http://image.tmdb.org/t/p/w500' +
-                            //     toprated[index]['poster_path'],
+                            bannerurl:
+                                'http://image.tmdb.org/t/p/w500${toprated[index]['backdrop-path']}',
+                            posterurl:
+                                'http://image.tmdb.org/t/p/w500${toprated[index]['poster_path']}',
                             vote: toprated[index]['vote_average'].toString(),
                             launch_on: toprated[index]['release_date'],
                           ),
@@ -56,8 +56,8 @@ class TopRated extends StatelessWidget {
                                   decoration: BoxDecoration(
                                     image: DecorationImage(
                                       image: NetworkImage(
-                                        'http://image.tmdb.org/t/p/w500' +
-                                            toprated[index]['poster_path'],
+                                        'https://image.tmdb.org/t/p/w500' +
+                                            toprated[index]['backdrop_path'],
                                       ),
                                     ),
                                   ),

@@ -48,6 +48,7 @@ class _HomeState extends State<Home> {
     super.initState();
   }
 
+
   loadmovies() async {
     TMDB tmdbWithCustomLogs = TMDB(
       ApiKeys(apikey, readaccesstoken),
@@ -67,11 +68,11 @@ class _HomeState extends State<Home> {
       topratedmovies = topratedresult['results'];
       tv = tvresult['results'];
     });
-    print(trendingmovies);
-    print('----------------------');
-    print(trendingmovies);
-    print('----------------------');
-    print(tv);
+    // print(trendingmovies);
+    // print('----------------------');
+    // print(trendingmovies);
+    // print('----------------------');
+    // print(tv);
 
   }
 

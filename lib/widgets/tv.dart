@@ -35,19 +35,17 @@ class TV extends StatelessWidget {
                           builder: (context) => Description(
                             name: tv[index]['original_name'],
                             description: tv[index]['overview'],
-                            // bannerurl: 'http://image.tmdb.org/t/p/w500' +
-                            //     tv[index]['backdrop_path'],
-                            // posterurl: 'http://image.tmdb.org/t/p/w500' +
-                            //     tv[index]['poster_path']!=null?'http://image.tmdb.org/t/p/w500' +
-                            //     tv[index]['poster_path']:'http://image.tmdb.org/t/p/w500' +
-                            //     tv[index]['backdrop_path'],
+                            bannerurl:
+                                'http://image.tmdb.org/t/p/w500${tv[index]['backdrop_path']}',
+                            posterurl:
+                                'http://image.tmdb.org/t/p/w500${tv[index]['poster_path']}',
                             vote: tv[index]['vote_average'].toString(),
                             launch_on: tv[index]['first_air_date'],
                           ),
                         ),
                       );
                     },
-                    child: tv[index]['title'] != null
+                    child: tv[index]['name'] != null
                         ? Container(
                             padding: EdgeInsets.all(5),
                             width: 250,
